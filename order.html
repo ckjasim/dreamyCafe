@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dreamy Cafe</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/8859e6078b.js" crossorigin="anonymous"></script>
+    <script src="./js/orderValidation.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="wrapper0">
+            <div class="logo1">
+              <img src="logo.png" alt="Dreamy Cafe Logo" />
+            </div>
+            <div class="main">
+              <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="register.html">REGISTER</a></li>
+                <li><a href="order.html">ORDER</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="form-container">
+          <div class="form-box">
+            <h1 class="form-heading">Place Your Order</h1>
+            <div id="errorMessages" aria-live="polite"></div>
+
+            <form class="order-form">
+              <!-- Delivery or Pickup -->
+              <div class="form-group">
+                <label for="order-type">Delivery or Pickup</label>
+                <div class="order-type-options">
+                  <label>
+                    <input type="radio" name="order-type" value="delivery" id="delivery-option" required />
+                    Delivery
+                  </label>
+                  <label>
+                    <input type="radio" name="order-type" value="pickup" id="pickup-option" required />
+                    Pickup
+                  </label>
+                </div>
+              </div>
+
+              <!-- Delivery Address (only shown if Delivery is selected) -->
+              <div class="form-group" id="delivery-address-field" style="display: none;">
+                <label for="delivery-address">Delivery Address</label>
+                <input
+                  type="text"
+                  class="input-field"
+                  id="delivery-address"
+                  placeholder="Enter Delivery Address"
+                />
+              </div>
+
+              <!-- Billing Address -->
+              <div class="form-group">
+                <label for="billing-address">Billing Address</label>
+                <input
+                  type="text"
+                  class="input-field"
+                  id="billing-address"
+                  placeholder="Enter Billing Address"
+                  required
+                />
+              </div>
+
+              <!-- Contact Number -->
+              <div class="form-group">
+                <label for="contact-number">Contact Number</label>
+                <input
+                  type="tel"
+                  class="input-field"
+                  id="contact-number"
+                  placeholder="Enter Contact Number"
+                  required
+                />
+              </div>
+
+              <!-- Email for Receipt -->
+              <div class="form-group">
+                <label for="email-receipt">Email for Receipt</label>
+                <input
+                  type="email"
+                  class="input-field"
+                  id="email-receipt"
+                  placeholder="Enter Email for Receipt"
+                  required
+                />
+              </div>
+
+              <!-- Payment Method -->
+              <div class="form-group">
+                <label>Pay on Pickup or Online</label>
+                <div class="payment-options">
+                  <label>
+                    <input type="radio" name="payment-method" value="pickup" id="pay-pickup" required />
+                    Pay on Pickup
+                  </label>
+                  <label>
+                    <input type="radio" name="payment-method" value="online" id="pay-online" required />
+                    Pay Online
+                  </label>
+                </div>
+              </div>
+
+              <!-- Credit Card Information (only shown if Pay Online is selected) -->
+              <div class="form-group" id="credit-card-info" style="display: none;">
+                <label for="credit-card">Credit Card Information</label>
+                <input
+                  type="text"
+                  class="input-field"
+                  id="credit-card"
+                  placeholder="Enter Credit Card Number"
+                />
+              </div>
+
+              <!-- Submit Button -->
+              <div>
+                <button class="submit-button" type="submit">Place Order</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main></main>
+    <footer>
+      <div class="footer">
+        <div class="footer-row">
+          <div class="footer-column">
+            <h4 class="footer-heading">Get In Touch</h4>
+            <p><i class="fa fa-map-marker-alt"></i> 123 Street, New York, USA</p>
+            <p><i class="fa fa-phone-alt"></i> +012 345 67890</p>
+            <p><i class="fa fa-envelope"></i> info@example.com</p>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-heading">Follow Us</h4>
+            <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+            <div class="social-icons">
+              <a class="social-button" href="#"><i class="fab fa-twitter"></i></a>
+              <a class="social-button" href="#"><i class="fab fa-facebook-f"></i></a>
+              <a class="social-button" href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a class="social-button" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-heading">Open Hours</h4>
+            <h6>Monday - Friday</h6>
+            <p>8.00 AM - 8.00 PM</p>
+            <h6>Saturday - Sunday</h6>
+            <p>2.00 PM - 8.00 PM</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('delivery-option').addEventListener('change', function () {
+        document.getElementById('delivery-address-field').style.display = 'block';
+      });
+
+      document.getElementById('pickup-option').addEventListener('change', function () {
+        document.getElementById('delivery-address-field').style.display = 'none';
+      });
+
+      document.getElementById('pay-online').addEventListener('change', function () {
+        document.getElementById('credit-card-info').style.display = 'block';
+      });
+
+      document.getElementById('pay-pickup').addEventListener('change', function () {
+        document.getElementById('credit-card-info').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dreamy Cafe</title>
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <script
+    src="https://kit.fontawesome.com/8859e6078b.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="./js/registerValidation.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="wrapper0">
+          <div class="logo1">
+            <img src="logo.png" alt="Dreamy Cafe Logo" />
+          </div>
+          <div class="main">
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="register.html">REGISTER</a></li>
+              <li><a href="order.html">ORDER</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <div class="form-box">
+          <h1 class="form-heading">Register</h1>
+
+          <div id="errorMessages" aria-live="polite"></div>
+
+          <form class="registration-form">
+            <!-- Username -->
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                class="input-field"
+                id="username"
+                placeholder="Enter Username"
+                required
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="input-field"
+                id="password"
+                placeholder="Enter Password"
+                required
+              />
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="gender-options">
+                <label>
+                  <input type="radio" name="gender" value="male" required />
+                  Male
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="female" required />
+                  Female
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="other" required />
+                  Other
+                </label>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="input-field"
+                id="email"
+                placeholder="Enter Email"
+                required
+              />
+            </div>
+
+            <!-- Favourite Coffee -->
+            <div class="form-group">
+              <label for="favourite-coffee">Favourite Coffee</label>
+              <select class="dropdown-field" id="favourite-coffee" required>
+                <option value="" disabled selected>Choose your coffee</option>
+                <option value="espresso">Espresso</option>
+                <option value="latte">Latte</option>
+                <option value="cappuccino">Cappuccino</option>
+                <option value="americano">Americano</option>
+              </select>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="form-group">
+              <label>
+                <input type="checkbox" required /> I accept the terms and
+                conditions
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+              <button class="submit-button" type="submit">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main></main>
+  <footer>
+    <div class="footer">
+      <div class="footer-row">
+        <div class="footer-column">
+          <h4 class="footer-heading">Get In Touch</h4>
+          <p><i class="fa fa-map-marker-alt"></i> 123 Street, New York, USA</p>
+          <p><i class="fa fa-phone-alt"></i> +012 345 67890</p>
+          <p><i class="fa fa-envelope"></i> info@example.com</p>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-heading">Follow Us</h4>
+          <p>
+            Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum
+          </p>
+          <div class="social-icons">
+            <a class="social-button" href="#"><i class="fab fa-twitter"></i></a>
+            <a class="social-button" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="social-button" href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a class="social-button" href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-heading">Open Hours</h4>
+          <h6>Monday - Friday</h6>
+          <p>8.00 AM - 8.00 PM</p>
+          <h6>Saturday - Sunday</h6>
+          <p>2.00 PM - 8.00 PM</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
